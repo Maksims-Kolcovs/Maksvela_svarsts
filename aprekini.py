@@ -93,3 +93,183 @@ Ig1 = I_kopa_1 - I1
 Ig2 = I_kopa_2 - I1
 
 
+# Enerģijas nezudamības likums
+
+# Kīnetiskā enerģija sākumā pie standartmasas,m_2,m_3
+Wk0 = 0  # (J)
+# Potenciāla enerģija sākumā pie standartmasas
+# Wp0=mgh
+Wp0_pie_m = m * g * h  # (J)
+# Potenciāla enerģija sākuma pie m_2
+# Wp0=mgh
+Wp0_pie_m2 = m_2 * g * h  # (J)
+# Potenciāla enerģija sākumā pie m_3
+# Wp0=mgh
+Wp0_pie_m3 = m_3 * g * h  # (J)
+
+#Kīnetiskā enerģija beigās pie standartmasas
+Wkb_pie_m = (m + I1 / (r * r)) * 2 * (h * h) / (tvid_1 * tvid_1)  # (J)
+#Kīnetiskā enerģija beigās pie m_2
+Wkb_pie_m2 = (m_2 + I_kopa_1 /
+              (r * r)) * 2 * (h * h) / (tvid_2 * tvid_2)  # (J)
+#Kīnetiskā enerģija beigās pie m_3
+Wkb_pie_m3 = (m_3 + I_kopa_2 /
+              (r * r)) * 2 * (h * h) / (tvid_3 * tvid_3)  # (J)
+
+# Potenciālā enerģija beigās pie standartmasas,m_2,m_3
+Wpb = 0  # (J)
+
+
+
+
+# Kļūdas aprēķiņi laikam
+
+# Kļūdas aprēķiņi laikam t pie standartmasas
+# Vidēja kvadratiskā kļūda
+
+Videja_kvadratiska_kluda_m = sqrt(
+    ((t_1 - tvid_1) * (t_1 - tvid_1) + (t_2 - tvid_1) * (t_2 - tvid_1) +
+     (t_3 - tvid_1) * (t_3 - tvid_1) + (t_4 - tvid_1) * (t_4 - tvid_1) +
+     (t_5 - tvid_1) * (t_5 - tvid_1) + (t_6 - tvid_1) * (t_6 - tvid_1) +
+     (t_7 - tvid_1) * (t_7 - tvid_1) + (t_8 - tvid_1) * (t_8 - tvid_1) +
+     (t_9 - tvid_1) * (t_9 - tvid_1) + (t_10 - tvid_1) * (t_10 - tvid_1)) /
+    (10 * (10 - 1)))  # (s)
+
+# Gadījumā kļūda
+Gadijuma_kluda_m = Videja_kvadratiska_kluda_m * Stjudents_10  #(s)
+
+# Sistemātiskā kļūda
+# mazāka iedaļas vertība =0.001
+mv = 0.001
+Sistematiska_kluda_m = mv / 3 * Stjudents_Bezgaliba  #(s)
+
+# Absolūta kļūda
+
+if Gadijuma_kluda_m <= Sistematiska_kluda_m:
+  Absoluta_kluda_m = Sistematiska_kluda_m  #(s)
+
+elif Gadijuma_kluda_m > Sistematiska_kluda_m:
+  Absoluta_kluda_m = Gadijuma_kluda_m  #(s)
+
+# Relatīvā kļūda
+
+Relativa_kluda_m = Absoluta_kluda_m / tvid_1 * 100  #(s)
+
+# Kļūdas aprēķiņi laikam t pie m_2
+# Vidēja kvadratiskā kļūda
+
+Videja_kvadratiska_kluda_m2 = sqrt(
+    ((t2_1 - tvid_2) * (t2_1 - tvid_2) + (t2_2 - tvid_2) * (t2_2 - tvid_2) +
+     (t2_3 - tvid_2) * (t2_3 - tvid_2) + (t2_4 - tvid_2) * (t2_4 - tvid_2) +
+     (t2_5 - tvid_2) * (t2_5 - tvid_2)) / (5 * (5 - 1)))  # (s)
+
+# Gadījumā kļūda
+Gadijuma_kluda_m2 = Videja_kvadratiska_kluda_m2 * Stjudents_5  #(s)
+
+# Sistemātiskā kļūda
+# mazāka iedaļas vertība =0.001
+mv2 = 0.001
+Sistematiska_kluda_m2 = mv2 / 3 * Stjudents_Bezgaliba  #(s)
+
+# Absolūta kļūda
+
+if Gadijuma_kluda_m2 <= Sistematiska_kluda_m2:
+  Absoluta_kluda_m2 = Sistematiska_kluda_m2  #(s)
+
+elif Gadijuma_kluda_m2 > Sistematiska_kluda_m2:
+  Absoluta_kluda_m2 = Gadijuma_kluda_m2  #(s)
+
+# Relatīvā kļūda
+
+Relativa_kluda_m2 = Absoluta_kluda_m2 / tvid_2 * 100  #(s)
+
+# Kļūdas aprēķiņi laikam t pie m_3
+# Vidēja kvadratiskā kļūda
+
+Videja_kvadratiska_kluda_m3 = sqrt(
+    ((t3_1 - tvid_3) * (t3_1 - tvid_3) + (t3_2 - tvid_3) * (t3_2 - tvid_3) +
+     (t3_3 - tvid_3) * (t3_3 - tvid_3) + (t3_4 - tvid_3) * (t3_4 - tvid_3) +
+     (t3_5 - tvid_3) * (t3_5 - tvid_3)) / (5 * (5 - 1)))  # (s)
+
+# Gadījumā kļūda
+Gadijuma_kluda_m3 = Videja_kvadratiska_kluda_m3 * Stjudents_5  #(s)
+
+# Sistemātiskā kļūda
+# mazāka iedaļas vertība =0.001
+mv3 = 0.001
+Sistematiska_kluda_m3 = mv / 3 * Stjudents_Bezgaliba  #(s)
+
+# Absolūta kļūda
+
+if Gadijuma_kluda_m3 <= Sistematiska_kluda_m3:
+  Absoluta_kluda_m3 = Sistematiska_kluda_m3  #(s)
+
+elif Gadijuma_kluda_m3 > Sistematiska_kluda_m3:
+  Absoluta_kluda_m3 = Gadijuma_kluda_m3  #(s)
+
+# Relatīvā kļūda
+
+Relativa_kluda_m3 = Absoluta_kluda_m3 / tvid_3 * 100  #(s)
+
+
+# Saglabāšana teksta datnē ar mērvienībām
+with open('rezultati.txt', 'w', encoding='utf-8') as f:
+  f.write(f"Inerces moments I1 (bez gredzena): {I1} kg*m^2\n")
+  f.write(
+      f"Inerces moments I kopa ar gredzenu (0.41816 kg): {I_kopa_1} kg*m^2\n")
+  f.write(
+      f"Inerces moments I kopa ar gredzenu (0.5545 kg): {I_kopa_2} kg*m^2\n")
+  f.write(
+      f"Teorētiskā inerces momenta gredzena aprēķins (0.41816 kg): {Ig1_teoretiski} kg*m^2\n"
+  )
+  f.write(
+      f"Teorētiskā inerces momenta gredzena aprēķins (0.5545 kg): {Ig2_teoretiski} kg*m^2\n"
+  )
+  f.write(f"Inerces moments Ig (0.41816 kg): {Ig1} kg*m^2\n")
+  f.write(f"Inerces moments Ig (0.5545 kg): {Ig2} kg*m^2\n")
+  f.write(
+      f"Potenciāla enerģija pie standartmasas (Wp0_m=6.2392E-01): {Wp0_pie_m} J\n"
+  )
+  f.write(f"Potenciāla enerģija pie m_2 (Wp0_m2=1.6409E+00): {Wp0_pie_m2} J\n")
+  f.write(f"Potenciāla enerģija pie m_3 (Wp0_m3=2.1759E+00): {Wp0_pie_m3} J\n")
+  f.write(
+      f"Kīnetiskā enerģija pie standartmasas (Wkb_m=6.2392E-01): {Wkb_pie_m} J\n"
+  )
+  f.write(f"Kīnetiskā enerģija pie m_2 (Wkb_m2=1.6409E+00): {Wkb_pie_m2} J\n")
+  f.write(f"Kīnetiskā enerģija pie m_3 (Wkb_m3=2.1759E+00): {Wkb_pie_m3} J\n")
+  f.write(
+      f"Enerģijas nezudamības likums pie m (Wk0 + Wp0 = Wkb + Wpb): {Wp0_pie_m} + {Wk0} = {Wkb_pie_m} + {Wpb} \n"
+  )
+  f.write(
+      f"Enerģijas nezudamības likums pie m_2 (Wk0 + Wp0 = Wkb + Wpb): {Wp0_pie_m2} + {Wk0} = {Wkb_pie_m2} + {Wpb} \n"
+  )
+  f.write(
+      f"Enerģijas nezudamības likums pie m_3 (Wk0 + Wp0 = Wkb + Wpb): {Wp0_pie_m3} + {Wk0} = {Wkb_pie_m3} + {Wpb} \n"
+  )
+
+  f.write(
+      f"Vidējā kvadratiskā kļūda pie m (0.01449): {Videja_kvadratiska_kluda_m} s\n"
+  )
+  f.write(f"Gadījumā kļūda m (0.04290): {Gadijuma_kluda_m} s\n")
+  f.write(
+      f"Sistematiskā kļūda pie m (0.000653333): {Sistematiska_kluda_m} s\n")
+  f.write(f"Absolūta kļūda pie m (0.04290): {Absoluta_kluda_m} s\n")
+  f.write(f"Relatīva kļūda pie m (3.161851415): {Relativa_kluda_m} s\n")
+
+  f.write(
+      f"Vidējā kvadratiskā kļūda pie m_2 (0.00692): {Videja_kvadratiska_kluda_m2} s\n"
+  )
+  f.write(f"Gadījumā kļūda m_2 (0.01923): {Gadijuma_kluda_m2} s\n")
+  f.write(
+      f"Sistematiskā kļūda pie m_2 (0.000653333): {Sistematiska_kluda_m2} s\n")
+  f.write(f"Absolūta kļūda m2 (0.01923): {Absoluta_kluda_m2} s\n")
+  f.write(f"Relatīva kļūda pie m_2 (0.934583981): {Relativa_kluda_m2} s\n")
+
+  f.write(
+      f"Vidējā kvadratiskā kļūda pie m_3 (0.00964): {Videja_kvadratiska_kluda_m3} s\n"
+  )
+  f.write(f"Gadījumā kļūda m_3 (0.02679): {Gadijuma_kluda_m3} s\n")
+  f.write(
+      f"Sistematiskā kļūda pie m_3 (0.000653333): {Sistematiska_kluda_m3} s\n")
+  f.write(f"Absolūta kļūda m3 (0.02679): {Absoluta_kluda_m3} s\n")
+  f.write(f"Relatīva kļūda pie m_3 (1.246394343): {Relativa_kluda_m3} s\n")
