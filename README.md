@@ -1,9 +1,6 @@
 # Maksvela svārsts 🧪
 # Labaratorijas darbs Nr. 1.4. Inereces momenta noteikšana, izmantojot Maksvela svārstu. 
 
-> [!NOTE]
-> https://estudijas.rtu.lv/pluginfile.php/332511/mod_resource/content/0/materiali_laborotorijas_darbiem/Lab-Maksv_svarsts.pdf - atsauce uz tekstu
-
 ## Teorētiskais pamatojums 📚
 
 Maksvela svārsts ir disks, kura ass iekārta bifilārā (divu auklu) iekarē. Svārstam pārvietojoties, tas veic saliktu kustību, kas sastāv no divām vienkāršākām: virzes kustības un rotācijas kustības. Maksvela svārsta pilnā kinētiskā enerģija Wk ir virzes kustības kinētiskās enerģijas $$\frac{1}{2}mv^2 = W_{kv}$$ un rotācijas kustības kinētiskās enerģijas $$\frac{1}{2}Iω^2 = W_{kr}$$ summa, kur m ir rotējošās sistēmas masa, I – tās inerces moments, v – virzes kustības ātrums, ω – rotācijas kustības leņķiskais ātrums. Redzam analoģiju starp abām enerģijas izteiksmēm, kur analoģiskie lielumi m ↔ I un v ↔ω . Tātad, ar Maksvela svārstu var pētīt saliktu kustību.
@@ -23,3 +20,7 @@ Ja rotē tikai iekārtas disks, tad m ir diska un tā ass kopējā masa, un note
 1. Noteikt Maksvela svārsta inerces momentu I0, laiku t mērot vismaz 5 reizes, bet ass diametru d mērot vairākas reizes dažādās ass vietās.
 2. Noteikt dotā gredzena inerces momentu Ig eksperimentāli un salīdzināt ar teorētiski aprēķināto.
 3. Pārbaudīt enerģijas nezūdamības likumu.
+
+
+> [!NOTE]
+> https://estudijas.rtu.lv/pluginfile.php/332511/mod_resource/content/0/materiali_laborotorijas_darbiem/Lab-Maksv_svarsts.pdf - atsauce uz tekstu
