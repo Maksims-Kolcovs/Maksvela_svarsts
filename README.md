@@ -3,7 +3,8 @@
 
 ## Aprēķinus un kodu izstrādāja:
 ### Maksims Koļcovs 👨🏻‍🔬
-### Karolīna Bucenka 👩🏼‍🔬.
+### Karolīna Bucenka 👩🏼‍🔬
+
 
 ## Teorētiskais pamatojums 📚
 
