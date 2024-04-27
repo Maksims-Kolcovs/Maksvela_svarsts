@@ -1,5 +1,9 @@
-# Maksvela svārsts 👩🏿‍🔬
+# Maksvela svārsts 📊
 # Labaratorijas darbs Nr. 1.4. Inereces momenta noteikšana, izmantojot Maksvela svārstu. 
+
+### Aprēķinus un kodu izstrādāja:
+### Maksims Koļcovs
+### Karolīna Bucenka
 
 ## Teorētiskais pamatojums 📚
 
