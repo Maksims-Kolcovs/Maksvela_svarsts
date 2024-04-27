@@ -1,6 +1,5 @@
-# Maksvela svārsts 🔬
-
-Labaratorijas darbs Nr. 1.4. Inereces momenta noteikšana, izmantojot Maksvela svārstu. 
+# Maksvela svārsts 🧪
+# Labaratorijas darbs Nr. 1.4. Inereces momenta noteikšana, izmantojot Maksvela svārstu. 
 
 > [!NOTE]
 > https://estudijas.rtu.lv/pluginfile.php/332511/mod_resource/content/0/materiali_laborotorijas_darbiem/Lab-Maksv_svarsts.pdf - atsauce uz tekstu
