@@ -1,10 +1,12 @@
 # Labaratorijas darbs Nr.1.4 "Inerces momenta noteikšana, izmantojot Maksvela svārstu".
 # Aprēķini izmantojot Python programmēšanas valodu.
-# Skripta izstrādātāja:
+# Skriptu izstrādātāja:
+
 # Maksims Koļcovss
 # Karolīna Bucenka
 
 from math import sqrt
+
 # Stjūdentu koeficenti:
 
 Stjudents_Bezgaliba = 1.96
@@ -211,6 +213,20 @@ elif Gadijuma_kluda_m3 > Sistematiska_kluda_m3:
 
 Relativa_kluda_m3 = Absoluta_kluda_m3 / tvid_3 * 100  #(s)
 
+# Sistematiskas kļūdas apŗēķins m, h, D1, 
+
+mv4 = 0.001
+
+# Sistemātiskās kļūdas aprēķins
+Sistematiska_kluda_m = mv4 / 3 * Stjudents_Bezgaliba
+Sistematiska_kluda_h = mv4 / 3 * Stjudents_Bezgaliba
+Sistematiska_kluda_d = mv4 / 3 * Stjudents_Bezgaliba
+
+# Relatīvās kļūdas aprēķins
+Relativa_kluda_m = Sistematiska_kluda_m / m * 100
+Relativa_kluda_h = Sistematiska_kluda_h / h * 100
+Relativa_kluda_d1 = Sistematiska_kluda_d / D1 * 100
+Relativa_kluda_d2 = Sistematiska_kluda_d / D2 * 100
 
 # Saglabāšana teksta datnē ar mērvienībām
 with open('rezultati.txt', 'w', encoding='utf-8') as f:
@@ -273,3 +289,9 @@ with open('rezultati.txt', 'w', encoding='utf-8') as f:
       f"Sistematiskā kļūda pie m_3 (0.000653333): {Sistematiska_kluda_m3} s\n")
   f.write(f"Absolūta kļūda m3 (0.02679): {Absoluta_kluda_m3} s\n")
   f.write(f"Relatīva kļūda pie m_3 (1.246394343): {Relativa_kluda_m3} s\n")
+ 
+ 
+  f.write(f"Masas m relatīvā kļūda: {Relativa_kluda_m}%\n")
+  f.write(f"Augstuma h relatīvā kļūda: {Relativa_kluda_h}%\n")
+  f.write(f"Diametra D1 relatīvā kļūda: {Relativa_kluda_d1}%\n")
+  f.write(f"Diametra D2 relatīvā kļūda: {Relativa_kluda_d2}%\n")
