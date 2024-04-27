@@ -1,5 +1,10 @@
 # Maksvela svārsts
 
+Lab. darbu rēķināja un izstrādāja aprēķinus Python valodā:
+
+Maksims Koļcovs
+Karolīna Bucenka
+
 ## Labaratorijas darbs Nr. 1.4. Inereces momenta noteikšana, izmantojot Maksvela svārstu.
 
 ### Teorētiskais pamatojums
