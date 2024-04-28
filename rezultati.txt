@@ -1,0 +1,50 @@
+Inerces moments I1 (bez gredzena): 8.618086200000002e-05 kg*m^2
+Inerces moments I kopa ar gredzenu (0.41816 kg): 0.00053354231383 kg*m^2
+Inerces moments I kopa ar gredzenu (0.5545 kg): 0.0007719112191406249 kg*m^2
+Teorētiskā inerces momenta gredzena aprēķins (0.41816 kg): 2.580443971875e-06 kg*m^2
+Teorētiskā inerces momenta gredzena aprēķins (0.5545 kg): 5.5211305078125005e-06 kg*m^2
+Inerces moments Ig (0.41816 kg): 0.00044736145182999997 kg*m^2
+Inerces moments Ig (0.5545 kg): 0.0006857303571406249 kg*m^2
+Potenciāla enerģija pie standartmasas (Wp0_m=6.2392E-01): 0.623916 J
+Potenciāla enerģija pie m_2 (Wp0_m2=1.6409E+00): 1.64085984 J
+Potenciāla enerģija pie m_3 (Wp0_m3=2.1759E+00): 2.1758580000000003 J
+Kīnetiskā enerģija pie standartmasas (Wkb_m=6.2392E-01): 0.6239160000000001 J
+Kīnetiskā enerģija pie m_2 (Wkb_m2=1.6409E+00): 1.64085984 J
+Kīnetiskā enerģija pie m_3 (Wkb_m3=2.1759E+00): 2.1758580000000007 J
+Enerģijas nezudamības likums pie m (Wk0 + Wp0 = Wkb + Wpb): 0.623916 + 0 = 0.6239160000000001 + 0 
+Enerģijas nezudamības likums pie m_2 (Wk0 + Wp0 = Wkb + Wpb): 1.64085984 + 0 = 1.64085984 + 0 
+Enerģijas nezudamības likums pie m_3 (Wk0 + Wp0 = Wkb + Wpb): 2.1758580000000003 + 0 = 2.1758580000000007 + 0 
+Vidējā kvadratiskā kļūda pie m (0.01449): 0.014531192502873113 s
+Gadījumā kļūda m (0.04290): 0.04301232980850441 s
+Sistematiskā kļūda pie m (0.000653333): 0.0006533333333333333 s
+Absolūta kļūda pie m (0.04290): 0.04301232980850441 s
+Relatīva kļūda pie m (3.161851415): 0.4109014675052411 s
+Vidējā kvadratiskā kļūda pie m_2 (0.00692): 0.007021395872616814 s
+Gadījumā kļūda m_2 (0.01923): 0.019519480525874742 s
+Sistematiskā kļūda pie m_2 (0.000653333): 0.0006533333333333333 s
+Absolūta kļūda m2 (0.01923): 0.019519480525874742 s
+Relatīva kļūda pie m_2 (0.934583981): 0.9475475983434339 s
+Vidējā kvadratiskā kļūda pie m_3 (0.00964): 0.009641058033224391 s
+Gadījumā kļūda m_3 (0.02679): 0.026802141332363805 s
+Sistematiskā kļūda pie m_3 (0.000653333): 0.0006533333333333333 s
+Absolūta kļūda m3 (0.02679): 0.026802141332363805 s
+Relatīva kļūda pie m_3 (1.246394343): 1.2466112247611072 s
+Masas m relatīvā kļūda: 0.4109014675052411%
+Augstuma h relatīvā kļūda: 0.16333333333333333%
+Diametra D1 relatīvā kļūda: 0.7686274509803921%
+Diametra D2 relatīvā kļūda: 0.6222222222222222%
+Sistematiskā kļūda I1: 2.1822103785947075e-06 kg*m^2
+Absolūtā kļūda I1: 2.1822103785947075e-06 kg*m^2
+Relatīvā kļūda I1: 2.5321287440762745%
+Sistematiskā kļūda I_kopa_1: 1.4257347232169542e-05 kg*m^2
+Absolūtā kļūda I_kopa_1: 1.4257347232169542e-05 kg*m^2
+Relatīvā kļūda I_kopa_1: 2.6722055332076793%
+Sistematiskā kļūda I_kopa_2: 2.1553988809133506e-05 kg*m^2
+Absolūtā kļūda I_kopa_2: 2.1553988809133506e-05 kg*m^2
+Relatīvā kļūda I_kopa_2: 2.792288578617854%
+Sistematiskā kļūda Ig1: 1.1954417469239466e-05 kg*m^2
+Absolūtā kļūda Ig1: 1.1954417469239466e-05 kg*m^2
+Relatīvā kļūda Ig1: 2.6722055332076793%
+Sistematiskā kļūda Ig2: 1.914757044255309e-05 kg*m^2
+Absolūtā kļūda Ig2: 1.914757044255309e-05 kg*m^2
+Relatīvā kļūda Ig2: 2.792288578617854%

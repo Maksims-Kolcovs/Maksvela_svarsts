@@ -228,6 +228,65 @@ Relativa_kluda_h = Sistematiska_kluda_h / h * 100
 Relativa_kluda_d1 = Sistematiska_kluda_d / D1 * 100
 Relativa_kluda_d2 = Sistematiska_kluda_d / D2 * 100
 
+
+
+# Kļūdas aprēķiņi inercei
+
+# Sistematiskās kļūdas aprēķins
+Sistematiska_kluda_I1 = sqrt((Relativa_kluda_m / 100 * I1)**2 + (2 * Relativa_kluda_m3 / 100 * I1)**2 + (Relativa_kluda_h / 100 * I1)**2)
+
+# Absolūtās kļūdas aprēķins
+Absoluta_kluda_I1 = Sistematiska_kluda_I1
+
+# Relatīvās kļūdas aprēķins
+Relativa_kluda_I1 = Absoluta_kluda_I1 / I1 * 100
+
+# Sistematiskās kļūdas aprēķins
+Sistematiska_kluda_I_kopa_1 = sqrt((Relativa_kluda_m2 / 100 * I_kopa_1)**2 + (2 * Relativa_kluda_m3 / 100 * I_kopa_1)**2 + (Relativa_kluda_h / 100 * I_kopa_1)**2)
+
+# Absolūtās kļūdas aprēķins
+Absoluta_kluda_I_kopa_1 = Sistematiska_kluda_I_kopa_1
+
+# Relatīvās kļūdas aprēķins
+Relativa_kluda_I_kopa_1 = Absoluta_kluda_I_kopa_1 / I_kopa_1 * 100
+
+# Sistematiskās kļūdas aprēķins
+Sistematiska_kluda_I_kopa_2 = sqrt((Relativa_kluda_m3 / 100 * I_kopa_2)**2 + (2 * Relativa_kluda_m3 / 100 * I_kopa_2)**2 + (Relativa_kluda_h / 100 * I_kopa_2)**2)
+
+# Absolūtās kļūdas aprēķins
+Absoluta_kluda_I_kopa_2 = Sistematiska_kluda_I_kopa_2
+
+# Relatīvās kļūdas aprēķins
+Relativa_kluda_I_kopa_2 = Absoluta_kluda_I_kopa_2 / I_kopa_2 * 100
+
+# Sistematiskās kļūdas aprēķins
+Sistematiska_kluda_Ig1 = sqrt((Relativa_kluda_m2 / 100 * Ig1)**2 + (2 * Relativa_kluda_m3 / 100 * Ig1)**2 + (Relativa_kluda_h / 100 * Ig1)**2)
+
+# Absolūtās kļūdas aprēķins
+Absoluta_kluda_Ig1 = Sistematiska_kluda_Ig1
+
+# Relatīvās kļūdas aprēķins
+Relativa_kluda_Ig1 = Absoluta_kluda_Ig1 / Ig1 * 100
+
+# Sistematiskās kļūdas aprēķins
+Sistematiska_kluda_Ig2 = sqrt((Relativa_kluda_m3 / 100 * Ig2)**2 + (2 * Relativa_kluda_m3 / 100 * Ig2)**2 + (Relativa_kluda_h / 100 * Ig2)**2)
+
+# Absolūtās kļūdas aprēķins
+Absoluta_kluda_Ig2 = Sistematiska_kluda_Ig2
+
+# Relatīvās kļūdas aprēķins
+Relativa_kluda_Ig2 = Absoluta_kluda_Ig2 / Ig2 * 100
+
+
+
+
+
+
+
+
+
+
+
 # Saglabāšana teksta datnē ar mērvienībām
 with open('rezultati.txt', 'w', encoding='utf-8') as f:
   f.write(f"Inerces moments I1 (bez gredzena): {I1} kg*m^2\n")
@@ -295,3 +354,19 @@ with open('rezultati.txt', 'w', encoding='utf-8') as f:
   f.write(f"Augstuma h relatīvā kļūda: {Relativa_kluda_h}%\n")
   f.write(f"Diametra D1 relatīvā kļūda: {Relativa_kluda_d1}%\n")
   f.write(f"Diametra D2 relatīvā kļūda: {Relativa_kluda_d2}%\n")
+
+  f.write(f"Sistematiskā kļūda I1: {Sistematiska_kluda_I1} kg*m^2\n")
+  f.write(f"Absolūtā kļūda I1: {Absoluta_kluda_I1} kg*m^2\n")
+  f.write(f"Relatīvā kļūda I1: {Relativa_kluda_I1}%\n")
+  f.write(f"Sistematiskā kļūda I_kopa_1: {Sistematiska_kluda_I_kopa_1} kg*m^2\n")
+  f.write(f"Absolūtā kļūda I_kopa_1: {Absoluta_kluda_I_kopa_1} kg*m^2\n")
+  f.write(f"Relatīvā kļūda I_kopa_1: {Relativa_kluda_I_kopa_1}%\n")
+  f.write(f"Sistematiskā kļūda I_kopa_2: {Sistematiska_kluda_I_kopa_2} kg*m^2\n")
+  f.write(f"Absolūtā kļūda I_kopa_2: {Absoluta_kluda_I_kopa_2} kg*m^2\n")
+  f.write(f"Relatīvā kļūda I_kopa_2: {Relativa_kluda_I_kopa_2}%\n")
+  f.write(f"Sistematiskā kļūda Ig1: {Sistematiska_kluda_Ig1} kg*m^2\n")
+  f.write(f"Absolūtā kļūda Ig1: {Absoluta_kluda_Ig1} kg*m^2\n")
+  f.write(f"Relatīvā kļūda Ig1: {Relativa_kluda_Ig1}%\n")
+  f.write(f"Sistematiskā kļūda Ig2: {Sistematiska_kluda_Ig2} kg*m^2\n")
+  f.write(f"Absolūtā kļūda Ig2: {Absoluta_kluda_Ig2} kg*m^2\n")
+  f.write(f"Relatīvā kļūda Ig2: {Relativa_kluda_Ig2}%\n")
