@@ -6,6 +6,7 @@
 # Karolīna Bucenka
 
 from math import sqrt
+from sympy import symbols, diff
 
 # Stjūdentu koeficenti:
 
@@ -279,7 +280,22 @@ Relativa_kluda_Ig2 = Absoluta_kluda_Ig2 / Ig2 * 100
 
 
 
+# Parciāla atvasināšana 
 
+# Definē mainīgos
+m, r, g, t, h, m_kopa, t_kopa, I1, I_kopa_1 = symbols('m r g t h m_kopa t_kopa I1 I_kopa_1')
+
+# Definē funkciju I un atvasina to pēc laika t
+I = m * (r * r) * (g * (t * t) / (2 * h) - 1)
+dI_dt = diff(I, t)
+
+# Definē funkciju I_kopa un atvasina to pēc laika t_kopa
+I_kopa = m_kopa * (r * r) * (g * (t_kopa * t_kopa) / (2 * h) - 1)
+dI_kopa_dt_kopa = diff(I_kopa, t_kopa)
+
+# Definē funkciju Ig1 un atvasina to pēc laika t
+Ig1 = I_kopa_1 - I1
+dIg1_dt = diff(Ig1, t)
 
 
 
@@ -370,3 +386,7 @@ with open('rezultati.txt', 'w', encoding='utf-8') as f:
   f.write(f"Sistematiskā kļūda Ig2: {Sistematiska_kluda_Ig2} kg*m^2\n")
   f.write(f"Absolūtā kļūda Ig2: {Absoluta_kluda_Ig2} kg*m^2\n")
   f.write(f"Relatīvā kļūda Ig2: {Relativa_kluda_Ig2}%\n")
+  f.write(f"Atvasinājums funkcijai I pēc laika t: {dI_dt}\n")
+  f.write(f"Atvasinājums funkcijai I_kopa pēc laika t_kopa: {dI_kopa_dt_kopa}\n")
+  f.write(f"Atvasinājums funkcijai Ig1 pēc laika t: {dIg1_dt}\n")
+
