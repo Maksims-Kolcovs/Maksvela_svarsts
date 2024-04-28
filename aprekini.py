@@ -214,25 +214,102 @@ elif Gadijuma_kluda_m3 > Sistematiska_kluda_m3:
 
 Relativa_kluda_m3 = Absoluta_kluda_m3 / tvid_3 * 100  #(s)
 
-# Sistematiskas kļūdas apŗēķins m, h, D1, 
+# Kļūdas h,D1,D2,r,m
 
-mv4 = 0.001
+# Sistemātiskas kļūdas
+m, m_2, m_3, r, g, tvid_1,tvid_2,tvid_3, h = symbols('m m_2 m_3 r g tvid_1 tvid_2 tvid_3 h')
 
-# Sistemātiskās kļūdas aprēķins
-Sistematiska_kluda_m = mv4 / 3 * Stjudents_Bezgaliba
-Sistematiska_kluda_h = mv4 / 3 * Stjudents_Bezgaliba
-Sistematiska_kluda_d = mv4 / 3 * Stjudents_Bezgaliba
+# mazākā iedāļas vertība h = 0.001 m
 
-# Relatīvās kļūdas aprēķins
-Relativa_kluda_m = Sistematiska_kluda_m / m * 100
-Relativa_kluda_h = Sistematiska_kluda_h / h * 100
-Relativa_kluda_d1 = Sistematiska_kluda_d / D1 * 100
-Relativa_kluda_d2 = Sistematiska_kluda_d / D2 * 100
+sistematiska_kluda_h = 0.001 / 3 * Stjudents_Bezgaliba
+
+# mazākā iedāļas vertība r,d1,d2=0.00005 m
+
+sistematiska_kluda_d1 = 0.00005 / 3 * Stjudents_Bezgaliba
+sistematiska_kluda_d2 = sistematiska_kluda_d1
+sistematiska_kluda_r = sistematiska_kluda_d1
+
+# mazākā iedāļas vertība m=0.00001 kg
+
+sistematiska_kluda_m = 0.00001 / 3 * Stjudents_Bezgaliba
+
+# Relatīvas kļūdas
+
+relativa_kluda_h =sistematiska_kluda_h/h*100
+relativa_kluda_d1 = sistematiska_kluda_d1/D1*100
+relativa_kluda_d2 = sistematiska_kluda_d2/D2*100
+relativa_kluda_r = sistematiska_kluda_r/r*100
+relativa_kluda_m = sistematiska_kluda_m/m*100
+
+# I pie m
+I_m = m * (r * r) * (g * (tvid_1 * tvid_1) / (2 * h) - 1)
+
+dI_dm = diff(I_m, m)
+dI_dr = diff(I_m, r)
+dI_dh = diff(I_m, h)
+dI_dt = diff(I_m, tvid_1)
+
+
+values = {
+    m: 0.159,
+    m_2: 0.41816,
+    m_3: 0.5545,
+    r: 0.005,
+    g: 9.81,
+    tvid_1: 1.36,
+    tvid_2: 2.06,
+    tvid_3: 2.15,
+    h: 0.4
+}
+
+dI_dm_value = dI_dm.subs(values)
+dI_dr_value = dI_dr.subs(values)
+dI_dh_value = dI_dh.subs(values)
+dI_dt_value = dI_dt.subs(values)
+
+
+Si = sqrt(((dI_dm_value) * sistematiska_kluda_m) * ((dI_dm_value) * sistematiska_kluda_m) + ((dI_dr_value) * sistematiska_kluda_r) * ((dI_dr_value) * sistematiska_kluda_r) + ((dI_dt_value) * Absoluta_kluda_m) * ((dI_dt_value) * Absoluta_kluda_m) + ((dI_dh_value) * sistematiska_kluda_h) * ((dI_dh_value) * sistematiska_kluda_h))
+
+Relativa_kluda_I=Si/I1*100
+
+# I pie m2
+
+I_m2 = m_2 * (r * r) * (g * (tvid_2 * tvid_2) / (2 * h) - 1)
+
+dI_dm2 = diff(I_m2, m_2)
+dI_dt2 = diff(I_m2, tvid_2)
+dI_dr1 = diff(I_m2, r)
+dI_dh1 = diff(I_m2, h)
+dI_dm2_value = dI_dm2.subs(values)
+dI_dt2_value = dI_dt2.subs(values)
+dI_dr_value1 = dI_dr1.subs(values)
+dI_dh_value1 = dI_dh1.subs(values)
+
+Si2 = sqrt(((dI_dm2_value) * sistematiska_kluda_m) * ((dI_dm2_value) * sistematiska_kluda_m) + ((dI_dr_value1) * sistematiska_kluda_r) * ((dI_dr_value1) * sistematiska_kluda_r) + ((dI_dt2_value) * Absoluta_kluda_m2) * ((dI_dt2_value) * Absoluta_kluda_m2) + ((dI_dh_value1) * sistematiska_kluda_h) * ((dI_dh_value1) * sistematiska_kluda_h))
+
+Relativa_kluda_Ikop1=Si2/I_kopa_1*100
+
+# I pie m3
+
+I_m3 = m_3 * (r * r) * (g * (tvid_3 * tvid_3) / (2 * h) - 1)
+
+dI_dm3 = diff(I_m3, m_3)
+dI_dt3 = diff(I_m3, tvid_3)
+dI_dr2 = diff(I_m3, r)
+dI_dh2 = diff(I_m3, h)
+dI_dm3_value = dI_dm3.subs(values)
+dI_dt3_value = dI_dt3.subs(values)
+dI_dr_value2 = dI_dr2.subs(values)
+dI_dh_value2 = dI_dh2.subs(values)
+
+
+Si3 = sqrt(((dI_dm3_value) * sistematiska_kluda_m) * ((dI_dm3_value) * sistematiska_kluda_m) + ((dI_dr_value2) * sistematiska_kluda_r) * ((dI_dr_value2) * sistematiska_kluda_r) + ((dI_dt3_value) * Absoluta_kluda_m3) * ((dI_dt3_value) * Absoluta_kluda_m3) + ((dI_dh_value2) * sistematiska_kluda_h) * ((dI_dh_value2) * sistematiska_kluda_h))
+Relativa_kluda_Ikop2=Si3/I_kopa_2*100
 
 
 
+//?
 # Kļūdas aprēķiņi inercei
-
 # Sistematiskās kļūdas aprēķins
 Sistematiska_kluda_I1 = sqrt((Relativa_kluda_m / 100 * I1)**2 + (2 * Relativa_kluda_m3 / 100 * I1)**2 + (Relativa_kluda_h / 100 * I1)**2)
 
@@ -280,8 +357,6 @@ Relativa_kluda_Ig2 = Absoluta_kluda_Ig2 / Ig2 * 100
 
 
 
-# Parciāla atvasināšana 
-
 # Definē mainīgos
 m, r, g, t, h, m_kopa, t_kopa, I1, I_kopa_1 = symbols('m r g t h m_kopa t_kopa I1 I_kopa_1')
 
@@ -296,7 +371,7 @@ dI_kopa_dt_kopa = diff(I_kopa, t_kopa)
 # Definē funkciju Ig1 un atvasina to pēc laika t
 Ig1 = I_kopa_1 - I1
 dIg1_dt = diff(Ig1, t)
-
+//?
 
 
 
@@ -370,7 +445,7 @@ with open('rezultati.txt', 'w', encoding='utf-8') as f:
   f.write(f"Augstuma h relatīvā kļūda: {Relativa_kluda_h}%\n")
   f.write(f"Diametra D1 relatīvā kļūda: {Relativa_kluda_d1}%\n")
   f.write(f"Diametra D2 relatīvā kļūda: {Relativa_kluda_d2}%\n")
-
+// ?
   f.write(f"Sistematiskā kļūda I1: {Sistematiska_kluda_I1} kg*m^2\n")
   f.write(f"Absolūtā kļūda I1: {Absoluta_kluda_I1} kg*m^2\n")
   f.write(f"Relatīvā kļūda I1: {Relativa_kluda_I1}%\n")
@@ -389,4 +464,21 @@ with open('rezultati.txt', 'w', encoding='utf-8') as f:
   f.write(f"Atvasinājums funkcijai I pēc laika t: {dI_dt}\n")
   f.write(f"Atvasinājums funkcijai I_kopa pēc laika t_kopa: {dI_kopa_dt_kopa}\n")
   f.write(f"Atvasinājums funkcijai Ig1 pēc laika t: {dIg1_dt}\n")
+// ?
+  f.write(f"Sistematiskā kļūda masai : {sistematiska_kluda_m} kg\n")
+  f.write(f"Relatīva kļūda masai : {relativa_kluda_m} %\n")
+  f.write(f"Sistematiskā kļūda augstumam : {sistematiska_kluda_h} m\n")
+  f.write(f"Relatīva kļūda augstumam : {relativa_kluda_h} %\n")
+  f.write(f"Sistematiskā kļūda iekšējam diametram : {sistematiska_kluda_d1} m\n")
+  f.write(f"Relatīva kļūda iekšējam diametram : {relativa_kluda_d1} %\n")
+  f.write(f"Sistematiskā kļūda pie ārējam diametram : {sistematiska_kluda_d2} m\n")
+  f.write(f"Relatīva kļūda pie ārējam diametram : {relativa_kluda_d2} %\n")
+  f.write(f"Sistematiskā kļūda radiusam : {sistematiska_kluda_r} m\n")
+  f.write(f"Relatīva kļūda radiusam : {relativa_kluda_r} %\n")
+  f.write(f"Absolūta kļūda pie I : {Si} kg*m^2\n")
+  f.write(f"Relatīva kļūda pie I : {Relativa_kluda_I} %\n")
+  f.write(f"Absolūta kļūda pie Ikop1 : {Si2} kg*m^2\n")
+  f.write(f"Relatīva kļūda pie Ikop1 : {Relativa_kluda_Ikop1} %\n")
+  f.write(f"Absolūta kļūda pie Ikop2 : {Si3} kg*m^2\n")
+  f.write(f"Relatīva kļūda pie Ikop2 : {Relativa_kluda_Ikop2} %\n")
 
