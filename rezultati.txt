@@ -49,7 +49,7 @@ Absolūta kļūda pie Ikop1 : 1.2476923670211667e-05 kg*m^2
 Relatīva kļūda pie Ikop1 : 2.3385068713007695 %
 Absolūta kļūda pie Ikop2 : 2.2072415768282732e-05 kg*m^2
 Relatīva kļūda pie Ikop2 : 2.8594500534473553 %
-Absolūta kļūda pie Ig1 : 2.86307994473619E-7 kg*m^2
-Absolūta kļūda pie Ig2 : 2.86307994473619E-7 kg*m^2
-Relatīva kļūda pie Ig1 : 0.0639992545853989 %
-Relatīva kļūda pie Ig2 : 0.0417522706253625 %
+Absolūta kļūda pie Ig1 Teoretiski: 2.86307994473619E-7 kg*m^2
+Absolūta kļūda pie Ig2 Teoretiski: 2.86307994473619E-7 kg*m^2
+Relatīva kļūda pie Ig1 Teoretiski: 0.0639992545853989 %
+Relatīva kļūda pie Ig2 Teoretiski : 0.0417522706253625 %
