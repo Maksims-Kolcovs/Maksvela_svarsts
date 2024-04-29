@@ -309,6 +309,8 @@ Relativa_kluda_Ikop2=Si3/I_kopa_2*100
 
 
 
+
+
 # Inerces moments 1 gredzenam (teorētiski) ∆Ig1
 
 # Ig = sqrt((D1 * m / 4 * ∆D1)^2 * (D2 * m / 4 * ∆D2)^2 + (D1^2+D2^2 / 8 * ∆m)^2
@@ -336,6 +338,74 @@ relativa_kluda_ig2_Teoretiski = (Ig_kluda_2_Si / Ig2)*100
 
 
 # Inerces moments 1. gredzenam (eksperimentāli) ∆Ig
+# Ig1=Ikop1-I0
+# Ikop1= m_2*(r*r)*(g*(tvid_2*tvid_2)/(2*h)-1)
+
+#r= 0.005
+#g= 9.81
+#tvid_2 = 2.06
+#h = 0.4
+#sistematiska_kluda_m = 0.000653
+#m_2 = 0.41816 
+#m_3 = 0.5545 
+#t_vid_3 = 2.12
+#Absoluta_kluda_m2 = 0.01951
+#sistematiska_kluda_h = 0.000653
+#sistematiska_kluda_r =  3.266666666666667e-05
+
+
+#term_eks_pec_m2 = ((r*r)*(g*(tvid_2 * tvid_2)/(2*h)-1) * sistematiska_kluda_m) * ((r*r)*(g*(tvid_2*tvid_2)/(2*h)-1) * sistematiska_kluda_m)
+
+#term_eks_pec_r2 = ((2*m_2*r)*(g*(tvid_2*tvid_2)/(2*h)-1) * sistematiska_kluda_r) * ((2*m_2*r)*(g*(tvid_2*tvid_2)/(2*h)-1) * sistematiska_kluda_r)
+
+#term_eks_pec_t2 = (m_2*(r*r)*(g*tvid_2/h-1) * Absoluta_kluda_m2) * (m_2*(r*r)*(g*tvid_2/h-1) * Absoluta_kluda_m2)
+
+#term_eks_pec_h2= (m_2*(r*r)*(g*tvid_2/(-2*h*h)-1) * sistematiska_kluda_h) * (m_2*(r*r)*(g*tvid_2/(-2*h*h)-1) * sistematiska_kluda_h)
+
+#Ig_kluda_eks_Si = term_eks_pec_m2 + term_eks_pec_r2 + term_eks_pec_t2 + term_eks_pec_h2
+#Ig_kluda_eks_Si_kvadratsakne = sympy.sqrt(Ig_kluda_eks_Si)
+#print (Ig_kluda_eks_Si_kvadratsakne)
+
+#print(term_eks_pec_m2)
+#print(term_eks_pec_r2)
+#print(term_eks_pec_t2)
+#print(term_eks_pec_h2)
+#print(Ig_kluda_eks_Si)
+
+#Ig11=I_kopa_1-I1
+
+#print(Ig11)
+
+#abs_kl_Ig1_eks = sympy.sqrt((Ig_kluda_eks_Si * Ig_kluda_eks_Si)+(Absoluta_kluda_m * Absoluta_kluda_m))
+
+#print(abs_kl_Ig1_eks)
+
+#relativa_kluda_Ig1_eks=abs_kl_Ig1_eks/Ig11*100
+
+#print (relativa_kluda_Ig1_eks)
+# Inerces moments 2. gredzenam (eksperimentāli) ∆Ig
+# Ig1=Ikop2-I0
+# Ikop2= m_3*(r*r)*(g*(tvid_3*tvid_3)/(2*h)-1)
+
+
+
+
+
+#term_eks_pec_m3 = ((r*r)*(g*(tvid_3*tvid_3)/(2*h)-1) * sistematiska_kluda_m) * ((r*r)*(g*(tvid_3*tvid_3)/(2*h)-1) * sistematiska_kluda_m)
+
+#term_eks_pec_r3 = ((2*m_3*r)*(g*(tvid_3*tvid_3)/(2*h)-1) * sistematiska_kluda_r) * ((2*m_3*r)*(g*(tvid_3*tvid_3)/(2*h)-1) * sistematiska_kluda_r)
+
+#term_eks_pec_t3 = (m_3*(r*r)*(g*tvid_3/h-1) * Absoluta_kluda_m3) * (m_3*(r*r)*(g*tvid_3/h-1) * Absoluta_kluda_m3)
+
+#term_eks_pec_h3 = (m_3*(r*r)*(g*tvid_3/(-2*h*h)-1) * sistematiska_kluda_h) * (m_3*(r*r)*(g*tvid_3/(-2*h*h)-1) * sistematiska_kluda_h)
+
+#Ig2_kluda_eks_Si = sympy.sqrt(term_eks_pec_m3+term_eks_pec_r3+term_eks_pec_t3+term_eks_pec_h3)
+
+#Ig22=I_kopa_2-I1
+
+#abs_kl_Ig2_eks = sympy.sqrt((Ig2_kluda_eks_Si*Ig2_kluda_eks_Si)+(Absoluta_kluda_m3*Absoluta_kluda_m3))
+
+#relativa_kluda_Ig2_eks = abs_kl_Ig2_eks/Ig22*100
 
 
 
@@ -431,6 +501,12 @@ with open('rezultati.txt', 'w', encoding='utf-8') as f:
   f.write(f"Absolūta kļūda pie Ig2 Teoretiski: {Ig_kluda_2_Si} kg*m^2\n")
   f.write(f"Relatīva kļūda pie Ig1 Teoretiski: {relativa_kluda_ig_Teoretiski} %\n")
   f.write(f"Relatīva kļūda pie Ig2 Teoretiski : {relativa_kluda_ig2_Teoretiski} %\n")
+
+  #f.write(f"Absolūta kļūda pie eks Ig1 : {abs_kl_Ig1_eks} kg*m^2\n")  
+  #f.write(f"Absolūta kļūda pie eks Ig2 : {abs_kl_Ig2_eks} kg*m^2\n")
+  #f.write(f"Relatīva kļūda pie eks Ig1 : {relativa_kluda_Ig1_eks} %\n")  
+  #f.write(f"Relatīva kļūda pie eks Ig2 : {relativa_kluda_Ig2_eks} %\n")
+
 
 
 

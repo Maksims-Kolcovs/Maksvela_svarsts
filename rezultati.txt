@@ -22,7 +22,7 @@ Relatīva kļūda pie m (3.161851415): 3.1626713094488537 s
 Vidējā kvadratiskā kļūda pie m_2 (0.00692): 0.007021395872616814 s
 Gadījumā kļūda m_2 (0.01923): 0.019519480525874742 s
 Sistematiskā kļūda pie m_2 (0.000653333): 0.0006533333333333333 s
-Absolūta kļūda m2 (0.01923): 0.019519480525874742 s
+Absolūta kļūda m2 (0.01923): 0.01951 s
 Relatīva kļūda pie m_2 (0.934583981): 0.9475475983434339 s
 Vidējā kvadratiskā kļūda pie m_3 (0.00964): 0.009641058033224391 s
 Gadījumā kļūda m_3 (0.02679): 0.026802141332363805 s
@@ -33,9 +33,9 @@ Masas m relatīvā kļūda: 3.1626713094488537%
 Augstuma h relatīvā kļūda: 0.0653333333333333/h%
 Diametra D1 relatīvā kļūda: 0.038431372549019606%
 Diametra D2 relatīvā kļūda: 0.031111111111111117%
-Sistematiskā kļūda masai : 6.533333333333334e-06 kg
+Sistematiskā kļūda masai : 0.000653 kg
 Relatīva kļūda masai : 0.000653333333333333/m %
-Sistematiskā kļūda augstumam : 0.0006533333333333333 m
+Sistematiskā kļūda augstumam : 0.000653 m
 Relatīva kļūda augstumam : 0.0653333333333333/h %
 Sistematiskā kļūda iekšējam diametram : 3.266666666666667e-05 m
 Relatīva kļūda iekšējam diametram : 0.038431372549019606 %
@@ -53,3 +53,7 @@ Absolūta kļūda pie Ig1 Teoretiski: 2.86307994473619E-7 kg*m^2
 Absolūta kļūda pie Ig2 Teoretiski: 2.86307994473619E-7 kg*m^2
 Relatīva kļūda pie Ig1 Teoretiski: 0.0639992545853989 %
 Relatīva kļūda pie Ig2 Teoretiski : 0.0417522706253625 %
+Absolūta kļūda pie eks Ig1 : 0.0430123298085044 kg*m^2
+Absolūta kļūda pie eks Ig2 : 0.0268021413323638*sqrt(1.07203398429323e-10*(-tvid_3 - 0.0326197757390418)**2 + 1.15584912992285e-7*(tvid_3 - 0.0407747196738022)**2 + 5.57860272617973e-11*(tvid_3**2 - 0.0815494393476045)**2 + 6.86802389932606e-9*(tvid_3**2 - 0.0815494393476045)**2 + 1) kg*m^2
+Relatīva kļūda pie eks Ig1 : 9614.67056058495 %
+Relatīva kļūda pie eks Ig2 : 3908.55400424797*sqrt(1.07203398429323e-10*(-tvid_3 - 0.0326197757390418)**2 + 1.15584912992285e-7*(tvid_3 - 0.0407747196738022)**2 + 5.57860272617973e-11*(tvid_3**2 - 0.0815494393476045)**2 + 6.86802389932606e-9*(tvid_3**2 - 0.0815494393476045)**2 + 1) %
