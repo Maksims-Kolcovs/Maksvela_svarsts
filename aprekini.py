@@ -331,8 +331,8 @@ Ig_kluda_2_Si = sympy.sqrt(term + term2 + term3)
 
 # Relatīvās kļūdas
 
-relativa_kluda_ig = (Ig_kluda_Si / Ig1)*100
-relativa_kluda_ig2 = (Ig_kluda_2_Si / Ig2)*100
+relativa_kluda_ig_Teoretiski = (Ig_kluda_Si / Ig1)*100
+relativa_kluda_ig2_Teoretiski = (Ig_kluda_2_Si / Ig2)*100
 
 
 # Inerces moments 1. gredzenam (eksperimentāli) ∆Ig
@@ -427,10 +427,10 @@ with open('rezultati.txt', 'w', encoding='utf-8') as f:
   f.write(f"Absolūta kļūda pie Ikop2 : {Si3} kg*m^2\n")
   f.write(f"Relatīva kļūda pie Ikop2 : {Relativa_kluda_Ikop2} %\n")
 
-  f.write(f"Absolūta kļūda pie Ig1 : {Ig_kluda_Si} kg*m^2\n")
-  f.write(f"Absolūta kļūda pie Ig2 : {Ig_kluda_2_Si} kg*m^2\n")
-  f.write(f"Relatīva kļūda pie Ig1 : {relativa_kluda_ig} %\n")
-  f.write(f"Relatīva kļūda pie Ig2 : {relativa_kluda_ig2} %\n")
+  f.write(f"Absolūta kļūda pie Ig1 Teoretiski: {Ig_kluda_Si} kg*m^2\n")
+  f.write(f"Absolūta kļūda pie Ig2 Teoretiski: {Ig_kluda_2_Si} kg*m^2\n")
+  f.write(f"Relatīva kļūda pie Ig1 Teoretiski: {relativa_kluda_ig_Teoretiski} %\n")
+  f.write(f"Relatīva kļūda pie Ig2 Teoretiski : {relativa_kluda_ig2_Teoretiski} %\n")
 
 
 
