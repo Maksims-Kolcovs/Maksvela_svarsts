@@ -348,10 +348,10 @@ with open('rezultati.txt', 'w', encoding='utf-8') as f:
   f.write(
       f"Inerces moments I kopa ar gredzenu (0.5545 kg): {I_kopa_2} kg*m^2\n")
   f.write(
-      f"Teorētiskā inerces momenta gredzena aprēķins (0.41816 kg): {Ig1_teoretiski} kg*m^2\n"
+      f"Teorētiskā inerces momenta gredzena aprēķins (0.259 kg): {Ig1_teoretiski} kg*m^2\n"
   )
   f.write(
-      f"Teorētiskā inerces momenta gredzena aprēķins (0.5545 kg): {Ig2_teoretiski} kg*m^2\n"
+      f"Teorētiskā inerces momenta gredzena aprēķins (0.396 kg): {Ig2_teoretiski} kg*m^2\n"
   )
   f.write(f"Inerces moments Ig (0.41816 kg): {Ig1} kg*m^2\n")
   f.write(f"Inerces moments Ig (0.5545 kg): {Ig2} kg*m^2\n")
